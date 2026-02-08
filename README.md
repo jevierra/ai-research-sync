@@ -260,6 +260,15 @@ This tool was built for production use, not as a demo. It emerged from an AI wor
 
 ---
 
+## Limitations & Things to Watch
+
+- **Model capability matters.** This relies on the LLM's ability to search, download, and follow manifest logic. Frontier models (Claude Opus 4.6, o3, Gemini 2.5) do this reliably in practice. Smaller local models might hallucinate links or miss steps — but even partial success is better than nothing.
+- **No built-in scheduling.** You have to manually prompt "run sync" or script it yourself. That said, wrapping it in a cron job or shell alias is trivial.
+- **Summary quality scales with the model.** Stronger reasoners (Claude, o3) pick better papers and write better summaries than a 7B local model. Use what you have — upgrade the model later if you want better output.
+- **arXiv is the primary source, not the only source.** Some breakthroughs land on HuggingFace blogs or Twitter before they hit arXiv. The instruction file supports adding sources, but out of the box it's arXiv-focused.
+
+---
+
 ## Contributing
 
 This started as an internal tool. If you're using it and find patterns that work — new sources, better filtering, improved summary prompts — contributions are welcome.
