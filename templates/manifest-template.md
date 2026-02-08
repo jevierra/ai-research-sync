@@ -1,6 +1,6 @@
 # AI Research Sync — Manifest
 
-**Last sync:** [not yet run]
+**Last successful sync:** [not yet run]
 **Model used:** [none]
 **Training cutoff:** [unknown]
 **Total papers:** 0

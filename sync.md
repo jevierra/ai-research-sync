@@ -48,10 +48,11 @@ Adapt the remaining steps based on your actual capabilities. Partial execution i
 Read `manifest.md` in this directory. If it doesn't exist, this is a first run — skip to Step 3.
 
 If the manifest exists:
-- Note the **last sync date**
+- Note the **last successful sync date**
 - Note all **arXiv IDs already downloaded**
-- Your search range is: **last sync date** to **today** (not the full cutoff gap)
+- Your search range is: **last successful sync date** to **today** (not the full cutoff gap)
 - You will skip any paper already in the manifest
+- **Staleness check:** If the last successful sync was more than 30 days ago, warn the user and suggest a full re-sync to avoid missing significant papers that accumulated during the gap
 
 ---
 
@@ -157,7 +158,7 @@ After downloading, update `manifest.md` with every paper downloaded in this sess
 ```markdown
 # AI Research Sync — Manifest
 
-**Last sync:** [today's date]
+**Last successful sync:** [today's date]
 **Model used:** [your model name]
 **Training cutoff:** [your cutoff date]
 **Total papers:** [count]
@@ -173,9 +174,11 @@ After downloading, update `manifest.md` with every paper downloaded in this sess
 
 **If manifest.md already exists, update it:**
 - Append new entries to the existing table (don't overwrite previous entries)
-- Update the "Last sync" date and "Total papers" count
+- Update the "Last successful sync" date and "Total papers" count
 - Keep entries in chronological order by publication date
 - Do NOT remove or modify existing entries
+
+**If no new papers are found**, do not modify the manifest. Output: `No new papers since last sync. Manifest unchanged.` and skip to Step 7.
 
 **Manifest is the source of truth.** If a paper is in the manifest, it doesn't get downloaded again. If the manifest is lost or corrupted, delete it and run a full sync to rebuild.
 

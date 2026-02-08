@@ -170,7 +170,7 @@ The manifest is the memory. It tracks every paper downloaded so subsequent runs 
 ```markdown
 # AI Research Sync — Manifest
 
-**Last sync:** 2026-02-06
+**Last successful sync:** 2026-02-06
 **Model used:** Claude Opus 4.6
 **Training cutoff:** 2025-05-01
 **Papers downloaded:** 19
